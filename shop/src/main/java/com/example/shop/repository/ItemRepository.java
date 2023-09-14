@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item>{  // <엔티티 타입 클래스, 기본키 타입>
+public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item>, ItemRepositoryCustom{  // <엔티티 타입 클래스, 기본키 타입>
 
     List<Item> findByItemNm(String itemNm);
 

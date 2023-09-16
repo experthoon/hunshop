@@ -1,9 +1,11 @@
 package com.example.shop.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Value("${uploadPath}") // 프로퍼티에서 설정한 uploadPath 프로퍼티 값을 읽어옵니다.

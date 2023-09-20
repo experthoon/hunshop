@@ -19,3 +19,6 @@
 
 ## 💾 Database ERD
 
+![shopErd](https://github.com/experthun/hunshop/assets/121845836/c2627e0c-fb91-4291-b765-b359b02be3a3)
+
+

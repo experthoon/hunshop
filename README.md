@@ -1,6 +1,6 @@
 ## 🛒 hunshop
 
-  Spring Boot, Spring Data JPA, Spring Sercurity 등의 기술스택을 이용하여 쇼핑몰 구
+  Spring Boot, Spring Data JPA, Spring Sercurity 등의 기술스택을 이용한 쇼핑몰
 
 <br>
 

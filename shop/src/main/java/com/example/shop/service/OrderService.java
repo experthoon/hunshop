@@ -94,4 +94,22 @@ public class OrderService {
 
         order.cancelOrder(); // 주문 취소 상태로 변경하면 변경 감지 기능에 의해서 트랜잭션이 끝날 때 update 쿼리가 실행
     }
+
+    public Long orders(List<OrderDto> orderDtoList, String email){
+        Member member = memberRepository.findByEmail(email);
+        List<OrderItem> orderItemList = new ArrayList<>();
+
+        for (OrderDto orderDto : orderDtoList){ // 주문할 상품 리스트를 만들어 준다.
+            Item item = itemRepository.findById(orderDto.getItemId())
+                    .orElseThrow(EntityNotFoundException::new);
+
+            OrderItem orderItem = OrderItem.createOrderItem(item, orderDto.getCount());
+            orderItemList.add(orderItem);
+        }
+
+        Order order = Order.createOrder(member, orderItemList);
+        orderRepository.save(order);
+
+        return order.getId();
+    }
 }
